@@ -216,7 +216,7 @@ namespace work1
                     MessageBox.Show(res.GetString("Error_FileFormat"));
                     return;
                 }
-
+                
                 List<string> errorLines = new List<string>();
                 try
                 {
