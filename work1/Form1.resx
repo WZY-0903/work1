@@ -263,27 +263,6 @@
   <data name="&gt;&gt;endip.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 51</value>
-  </data>
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 196</value>
-  </data>
-  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
-    <value>listView1</value>
-  </data>
-  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>519, 2</value>
   </data>
@@ -384,9 +363,9 @@
   <data name="listView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
+  </metadata>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 92</value>
   </data>
@@ -516,6 +495,18 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Pool info</value>
   </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button7.Location" type="System.Drawing.Point, System.Drawing">
     <value>809, 145</value>
   </data>
@@ -527,6 +518,18 @@
   </data>
   <data name="button7.Text" xml:space="preserve">
     <value>Factory Mode</value>
+  </data>
+  <data name="&gt;&gt;button7.Name" xml:space="preserve">
+    <value>button7</value>
+  </data>
+  <data name="&gt;&gt;button7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button7.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -639,6 +642,18 @@
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Upgrade</value>
   </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -653,6 +668,18 @@
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Firmware:</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -669,6 +696,18 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Miner Type:</value>
   </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
     <value>1098, 51</value>
   </data>
@@ -680,6 +719,18 @@
   </data>
   <data name="button6.Text" xml:space="preserve">
     <value>Add firmware</value>
+  </data>
+  <data name="&gt;&gt;button6.Name" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -696,6 +747,18 @@
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Keep Settings</value>
   </data>
+  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
+    <value>checkBox1</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
     <value>645, 53</value>
   </data>
@@ -708,6 +771,18 @@
   <data name="button5.Text" xml:space="preserve">
     <value>upgrade</value>
   </data>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 60</value>
   </data>
@@ -717,6 +792,18 @@
   <data name="comboBox2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
+    <value>comboBox2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 60</value>
   </data>
@@ -725,6 +812,18 @@
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="listView3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -737,6 +836,18 @@
   </data>
   <data name="listView3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;listView3.Name" xml:space="preserve">
+    <value>listView3</value>
+  </data>
+  <data name="&gt;&gt;listView3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView3.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;listView3.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="checkBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -804,9 +915,9 @@
   <data name="&gt;&gt;Progress.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>182, 17</value>
-  </data>
+  </metadata>
   <data name="statusStrip1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -1086,9 +1197,30 @@
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 51</value>
   </data>
+  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>482, 196</value>
+  </data>
+  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
+    <value>listView1</value>
+  </data>
+  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 12</value>
   </data>
@@ -1139,65 +1271,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Error_ColumnCount" xml:space="preserve">
-    <value>Format error (wrong number of columns): {0}</value>
-  </data>
-  <data name="Error_FileEmpty" xml:space="preserve">
-    <value>File is empty or contains only blank lines</value>
-  </data>
-  <data name="Error_FileFormat" xml:space="preserve">
-    <value>File format error, only CSV and TXT supported</value>
-  </data>
-  <data name="Error_FileRead" xml:space="preserve">
-    <value>File reading error: {0}</value>
-  </data>
-  <data name="Error_ImportLines" xml:space="preserve">
-    <value>The following lines failed to import ({0} lines): {1}</value>
-  </data>
-  <data name="Error_ImportTitle" xml:space="preserve">
-    <value>Import Warning</value>
-  </data>
-  <data name="Error_IPBlockFormat" xml:space="preserve">
-    <value>IP block format error or values not in 0-255: {0}</value>
-  </data>
-  <data name="Error_IPOverlap" xml:space="preserve">
-    <value>IP overlap: {0} {1}-{2}</value>
-  </data>
-  <data name="Error_IPRange" xml:space="preserve">
-    <value>Start or end IP should be between 0-255: {0}, {1}</value>
-  </data>
-  <data name="Error_SpaceInData" xml:space="preserve">
-    <value>Spaces are not allowed in data: {0}</value>
-  </data>
-  <data name="Error_SplitterWrong" xml:space="preserve">
-    <value>Separator error, commas must be English commas: {0}</value>
-  </data>
-  <data name="Error_StartEndIPFormat" xml:space="preserve">
-    <value>Start or end IP format error: {0} {1}</value>
-  </data>
-  <data name="Error_StartGTEnd" xml:space="preserve">
-    <value>Start IP cannot be greater than End IP: {0} &gt; {1}</value>
-  </data>
-  <data name="FormatError" xml:space="preserve">
-    <value>Format error!</value>
-  </data>
-  <data name="InputOutOfRange" xml:space="preserve">
-    <value>Please enter a number between 0 and 255!</value>
-  </data>
-  <data name="InputOutOfRangeWithError" xml:space="preserve">
-    <value>Please enter a number between 0 and 255! Error:</value>
-  </data>
-  <data name="OpenFileDialog_Filter" xml:space="preserve">
-    <value>*.csv</value>
-  </data>
-  <data name="OpenFileDialog_Title" xml:space="preserve">
-    <value>Please select a CSV file</value>
-  </data>
-  <data name="OverlapError" xml:space="preserve">
-    <value>Overlapping IP block range!</value>
-  </data>
-  <data name="StartIpGreaterThanEndIp" xml:space="preserve">
-    <value>StartIP should not be greater than EndIP!</value>
   </data>
 </root>

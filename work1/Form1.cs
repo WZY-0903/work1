@@ -408,9 +408,35 @@ namespace work1
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }   
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listView2.Items.Clear();
+            List<ipBlock> selectedBlocks = new List<ipBlock>();
+            foreach(ListViewItem item in listView1.Items)
+            {
+                if (item.Checked)
+                {
+                    int index = item.Index;
+                    if (index >= 0 && index < ipBlockList.Count)
+                    {
+                        selectedBlocks.Add(ipBlockList[index]);
+                    }
+                }
+            }
+
+            foreach(ipBlock block in selectedBlocks)
+            {
+                for (int i = block.start; i <= block.end; i++)
+                {
+                    string ip = $"{block.ip_block}.{i}";
+                    listView2.Items.Add(new ListViewItem(ip));
+                }
+            }
+        }
     }
 }
-// 这是一个测试信息
+
 
 
