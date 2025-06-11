@@ -74,6 +74,8 @@ namespace work1
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -190,6 +192,7 @@ namespace work1
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button9);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.listView2);
             resources.ApplyResources(this.tabPage1, "tabPage1");
@@ -357,10 +360,24 @@ namespace work1
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // button8
+            // 
+            resources.ApplyResources(this.button8, "button8");
+            this.button8.Name = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            resources.ApplyResources(this.button9, "button9");
+            this.button9.Name = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox4);
@@ -444,6 +461,8 @@ namespace work1
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
     }
 }
 

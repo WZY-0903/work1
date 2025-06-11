@@ -435,6 +435,60 @@ namespace work1
                 }
             }
         }
+        public void ExportToExecl(ListView listview)
+        {
+            System.Windows.Forms.SaveFileDialog sfd = new SaveFileDialog();
+            sfd.DefaultExt = "csv";
+            sfd.Filter = "Excel文件(*.csv)|*.csv";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                StringBuilder _B = ListViewToCSV(listview, ",", "\r\n");
+                File.WriteAllText(sfd.FileName, _B.ToString(), Encoding.UTF8);
+                MessageBox.Show("OK");
+            }
+        }
+
+        private StringBuilder ListViewToCSV(ListView p_ListView, string p_ColumnChar, string p_RowChar)
+        {
+
+            StringBuilder _Csv = new StringBuilder();
+            for (int i = 0; i != p_ListView.Columns.Count; i++)
+            {
+                _Csv.Append(Convert.ToString(p_ListView.Columns[i].Text));
+                if (i != p_ListView.Columns.Count - 1)
+                {
+                    _Csv.Append(p_ColumnChar);
+                }
+                else
+                {
+                    _Csv.Append(p_RowChar);
+                }
+            }
+
+            foreach (ListViewItem _Item in p_ListView.Items)
+            {
+
+                for (int i = 0; i != _Item.SubItems.Count; i++)
+                {
+                    _Csv.Append(Convert.ToString(_Item.SubItems[i].Text));
+                    if (i != _Item.SubItems.Count - 1)
+                    {
+                        _Csv.Append(p_ColumnChar);
+                    }
+                    else
+                    {
+                        _Csv.Append(p_RowChar);
+                    }
+                }
+
+            }
+
+            return _Csv;
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ExportToExecl(this.listView2);
+        }
     }
 }
 
