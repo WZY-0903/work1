@@ -194,11 +194,37 @@ namespace work1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            //if (listView1.SelectedItems.Count > 0)
+            //{
+            //    ipBlockList.RemoveAt(listView1.SelectedItems[0].Index);
+            //    ShowList1();
+            //}
+
+
+            // 用于保存要删除的索引（从后往前删，避免索引错乱）
+            List<int> indexesToRemove = new List<int>();
+
+            // 收集所有被勾选（Checked）的项的索引
+            for (int i = 0; i < listView1.Items.Count; i++)
             {
-                ipBlockList.RemoveAt(listView1.SelectedItems[0].Index);
-                ShowList1();
+                if (listView1.Items[i].Checked)
+                {
+                    indexesToRemove.Add(i);
+                }
             }
+
+            // 从后往前删除，避免下标变化导致的问题
+            indexesToRemove.Reverse();
+            foreach (int index in indexesToRemove)
+            {
+                if (index >= 0 && index < ipBlockList.Count)
+                {
+                    ipBlockList.RemoveAt(index);
+                }
+            }
+
+            // 刷新 ListView 显示
+            ShowList1();
         }
 
         private void button3_Click(object sender, EventArgs e)
