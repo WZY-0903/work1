@@ -59,6 +59,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ipBlock.cs" />
+    <Compile Include="ipConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ipConfigForm.Designer.cs">
+      <DependentUpon>ipConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

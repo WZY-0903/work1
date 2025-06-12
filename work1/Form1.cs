@@ -53,7 +53,7 @@ namespace work1
 
             //添加列表项
             for (int index = 0; index < ipBlockList.Count; index++)
-            {
+            { 
                 ListViewItem item = new ListViewItem();
                 item.SubItems.Clear();
                 item.SubItems[0].Text = (index + 1).ToString();
@@ -103,7 +103,7 @@ namespace work1
                 {
                     MessageBox.Show(res.GetString("InputOutOfRange"));
                     ip = 0;
-                    return false;
+                    return false;                
                 }
             }
             catch(Exception error)
@@ -116,7 +116,6 @@ namespace work1
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -197,10 +196,9 @@ namespace work1
             if (listView1.SelectedItems.Count > 0)
             {
                 ipBlockList.RemoveAt(listView1.SelectedItems[0].Index);
-                //ShowList1();
             }
             List<int> indexToRemove = new List<int>();
-            for (int i = 0;i < listView1.Items.Count;i++ )
+            for (int i = 0; i < listView1.SelectedItems.Count; i++)
             {
                 if (listView1.Items[i].Checked)
                 {
@@ -413,8 +411,11 @@ namespace work1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Factory factory = new Factory();
+            Factory factory = null;
+            factory = new Factory();
+            factory.Owner = this;
             factory.ShowDialog();
+
         }
 
         private void contextMenuStrip1_Opening_1(object sender, CancelEventArgs e)
@@ -452,59 +453,69 @@ namespace work1
                 }
             }
         }
-        public void ExportToExecl(ListView listview)
+        public void ExportToExcel(ListView listView)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.DefaultExt = "csv";
-            sfd.Filter = "Excel文件(*.csv)|*.csv";
-            if (sfd.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.Filter = "Excel文件(*.csv)|*.csv";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                StringBuilder _B = ListViewToCSV(listview, ",", "\r\n");
-                File.WriteAllText(sfd.FileName, _B.ToString(), Encoding.UTF8);
-                MessageBox.Show("OK");
+                StringBuilder _B = ListViewToCSV(listView, ",", "\r\n");
+                File.WriteAllText(saveFileDialog.FileName,_B.ToString(),Encoding.UTF8);
+                MessageBox.Show("ok");
             }
         }
 
-        private StringBuilder ListViewToCSV(ListView p_ListView, string p_ColumnChar, string p_RowChar)
-        {
 
-            StringBuilder _Csv = new StringBuilder();
-            for (int i = 0; i != p_ListView.Columns.Count; i++)
+        private StringBuilder ListViewToCSV(ListView p_Listview , string p_ColumnChar,string p_RowChar)
+        {
+            StringBuilder csv = new StringBuilder();
+            for (int i = 0; i!=p_Listview.Columns.Count; i++)
             {
-                _Csv.Append(Convert.ToString(p_ListView.Columns[i].Text));
-                if (i != p_ListView.Columns.Count - 1)
+                csv.Append(Convert.ToString(p_Listview.Columns[i].Text));
+                if (i !=p_Listview.Columns.Count - 1)
                 {
-                    _Csv.Append(p_ColumnChar);
+                    csv.Append(p_ColumnChar);
                 }
                 else
                 {
-                    _Csv.Append(p_RowChar);
+                    csv.Append(p_RowChar);
                 }
             }
-
-            foreach (ListViewItem _Item in p_ListView.Items)
+            foreach(ListViewItem _Item in p_Listview.Items)
             {
-
-                for (int i = 0; i != _Item.SubItems.Count; i++)
+                for (int i = 0; i !=_Item.SubItems.Count; i++)
                 {
-                    _Csv.Append(Convert.ToString(_Item.SubItems[i].Text));
-                    if (i != _Item.SubItems.Count - 1)
+                    csv.Append(Convert.ToString(_Item.SubItems[i].Text));
+                    if (i !=_Item.SubItems.Count -1)
                     {
-                        _Csv.Append(p_ColumnChar);
+                        csv.Append(p_ColumnChar);
                     }
                     else
                     {
-                        _Csv.Append(p_RowChar);
+                        csv.Append(p_RowChar);
                     }
                 }
-
             }
-
-            return _Csv;
+            return csv;
         }
         private void button9_Click(object sender, EventArgs e)
         {
-            ExportToExecl(this.listView2);
+            ExportToExcel(this.listView2);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            ipConfigForm ip_config_form = null;
+            ip_config_form = new ipConfigForm();
+            ip_config_form.Owner = this;
+            ip_config_form.ShowDialog();
+
         }
     }
 }
