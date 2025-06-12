@@ -506,7 +506,12 @@ namespace work1
 
         private void button11_Click(object sender, EventArgs e)
         {
-
+            // 在用户点击“修改矿池”按钮时，先进性输入校验，确认提示，再批量通过SSH修改矿池设置
+            //检查矿池输入是否完整
+            //检查是否选择了一个且仅一个模式
+            //检查是否设置了至少一个矿池
+            //弹出确认框
+            //开始异步批量执行SSH修改操作
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -516,6 +521,114 @@ namespace work1
             ip_config_form.Owner = this;
             ip_config_form.ShowDialog();
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // 批量检查矿机状态
+            //准备阶段：
+            //  刷新状态栏
+            //  禁用按钮
+            //  初始化统计变量和参数（如超频临界值）
+            //设置进度条
+            //异步对所有矿机执行检查任务
+            //每台矿机完成后调回函数更新界面，计数，进度条
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            // 启动自动扫描矿机状态
+            //校验用户输入时间（单位：分钟）
+            //注册扫描任务事件
+            //启动定时器，设置定时间隔
+            //修改按钮状态：启用停止按钮，禁用操作按钮
+            //立即执行一次扫描任务
+            //后续每隔固定时间自动重复扫描
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            // 停止自动扫描矿机状态任务
+            //停止计时器
+            //恢复按钮状态
+            //禁用“停止自动扫描”按钮
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // 批量获取矿机的UTC时间信息，并更新UI状态
+            //初始化状态显示和空间状态
+            //设置进度条最大值和初始值
+            //使用异步方式对每台矿机执行
+            //每台完成后由CallBack更新状态和进度
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            // 批量重置矿机的IP地址
+            //初始化 清空状态，禁用界面按钮
+            //设置进度条 最大值=矿机数，初始值=0
+            //异步操作 对每台矿机调用，并在CallBack中处理结果
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // 批量修改矿机密码
+            //检查是否有IP列表
+            //弹出确认修改密码
+            //禁用操作按钮
+            //初始化进度条
+            //遍历矿机列表，异步修改密码
+            //每台完成后CallBack处理状态和UI
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // 批量重启矿机
+            //初始化设备状态列和禁用按钮
+            //初始化进度条
+            //使用委托 异步对每台矿机执行重启
+            //操作结果通过CallBack函数处理UI和状态
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            // 批量执行矿机“恢复出场设置”操作
+            //用户确认
+            //状态初始化
+            //禁用操作
+            //进度管理
+            //异步恢复
+            //回调反馈
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // 清除Refine数据
+            //刷新设备状态栏，初始化“清楚中...”状态
+            //禁用操作按钮，保障操作过程安全
+            //初始化进度条
+            //异步对所有矿机执行 操作
+            //每个任务完成时自动调用CallBack回调函数更新状态
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // 批量执行矿机时间同步
+            //初始化界面和进度条
+            //禁用按钮确保操作稳定
+            //遍历矿机列表异步执行
+            //每执行完成一台矿机，CallBack触发，更新界面和进度
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // 批量打开矿机指示灯
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            // 批量关闭矿机指示灯
         }
     }
 }
