@@ -206,7 +206,7 @@ namespace work1
                 }
             }
             indexToRemove.Reverse();
-            foreach(int index in indexToRemove)
+            foreach (int index in indexToRemove)
             {
                 if (index >= 0 && index < ipBlockList.Count)
                 {
@@ -512,6 +512,7 @@ namespace work1
             //检查是否设置了至少一个矿池
             //弹出确认框
             //开始异步批量执行SSH修改操作
+            
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -629,6 +630,11 @@ namespace work1
         private void button24_Click(object sender, EventArgs e)
         {
             // 批量关闭矿机指示灯
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
