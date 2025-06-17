@@ -117,6 +117,87 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="button1.Text" xml:space="preserve">
+    <value>添加IP段</value>
+  </data>
+  <data name="button10.Text" xml:space="preserve">
+    <value>检测矿机信息</value>
+  </data>
+  <data name="button11.Text" xml:space="preserve">
+    <value>开始设置</value>
+  </data>
+  <data name="button12.Text" xml:space="preserve">
+    <value>同步时间</value>
+  </data>
+  <data name="button13.Text" xml:space="preserve">
+    <value>亮灯</value>
+  </data>
+  <data name="button14.Text" xml:space="preserve">
+    <value>清除自适应</value>
+  </data>
+  <data name="button15.Text" xml:space="preserve">
+    <value>重启机器</value>
+  </data>
+  <data name="button16.Text" xml:space="preserve">
+    <value>矿机时间</value>
+  </data>
+  <data name="button17.Text" xml:space="preserve">
+    <value>定时检测</value>
+  </data>
+  <data name="button19.Text" xml:space="preserve">
+    <value>弹IP</value>
+  </data>
+  <data name="button20.Text" xml:space="preserve">
+    <value>停止检测</value>
+  </data>
+  <data name="button21.Text" xml:space="preserve">
+    <value>重置IP</value>
+  </data>
+  <data name="button22.Text" xml:space="preserve">
+    <value>恢复出厂</value>
+  </data>
+  <data name="button24.Text" xml:space="preserve">
+    <value>灭灯</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>导入IP列表</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>删除行</value>
+  </data>
+  <data name="button5.Text" xml:space="preserve">
+    <value>升级固件</value>
+  </data>
+  <data name="button6.Text" xml:space="preserve">
+    <value>添加固件</value>
+  </data>
+  <data name="button7.Text" xml:space="preserve">
+    <value>工厂模式</value>
+  </data>
+  <data name="button8.Text" xml:space="preserve">
+    <value>修改密码</value>
+  </data>
+  <data name="button9.Text" xml:space="preserve">
+    <value>导出列表</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>保留配置</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>超频老化测试</value>
+  </data>
+  <data name="checkBox6.Text" xml:space="preserve">
+    <value>只显示在线机器</value>
+  </data>
+  <data name="checkBox7.Text" xml:space="preserve">
+    <value>正常模式</value>
+  </data>
+  <data name="checkBox8.Text" xml:space="preserve">
+    <value>超频模式</value>
+  </data>
+  <data name="checkBox9.Text" xml:space="preserve">
+    <value>风扇（前置）</value>
+  </data>
   <data name="Error_ColumnCount" xml:space="preserve">
     <value>格式错误（列数不对）：{0}</value>
   </data>
@@ -172,17 +253,50 @@
   <data name="label1.Text" xml:space="preserve">
     <value>IP段</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>后缀</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>后缀</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 12</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>起始IP</value>
   </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>后缀</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>风扇（后置）</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 12</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>结束IP</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>矿机类型</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>固件</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>矿机密码</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>在线机器</value>
   </data>
   <data name="OpenFileDialog_Filter" xml:space="preserve">
     <value>CSV 文件 (*.csv)</value>
@@ -193,7 +307,22 @@
   <data name="OverlapError" xml:space="preserve">
     <value>IP段范围有重叠！</value>
   </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="radioButton5.Text" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="radioButton6.Text" xml:space="preserve">
+    <value>无</value>
+  </data>
   <data name="StartIpGreaterThanEndIp" xml:space="preserve">
     <value>StartIP 不可以超过 EndIP!</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>矿池相关</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>固件升级</value>
   </data>
 </root>

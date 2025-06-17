@@ -24,8 +24,7 @@ using System.Timers;
 //using BlackMinerTool;
 using System.Resources;
 using System.Reflection;
-
-
+using BitMainMinerTool;
 
 namespace work1
 {
@@ -186,6 +185,55 @@ namespace work1
 
         }
 
+        private void ShowList2_state()
+        {
+            listView2.Clear();
+
+            //设置listView的显示属性
+            listView2.GridLines = true;
+            listView2.FullRowSelect = true;
+            listView2.View = View.Details;
+            listView2.Scrollable = true;
+            listView2.MultiSelect = false;
+            listView2.HeaderStyle = ColumnHeaderStyle.Clickable;
+
+            listView2.Columns.Add("ID", 25, HorizontalAlignment.Center);
+            listView2.Columns.Add("IP", 100, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Aging Test", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("MAC", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("SN1", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("SN2", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("SN3", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("Aging Time", 80, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Miner STATUS", 60, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Type", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("Version", 80, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("freq", 50, HorizontalAlignment.Center);
+            listView2.Columns.Add("Elapsed", 80, HorizontalAlignment.Center);
+            listView2.Columns.Add("Hash Rate(5S)", 70, HorizontalAlignment.Center);
+            listView2.Columns.Add("Hash Rate(avg)", 70, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("HW", 50, HorizontalAlignment.Center);
+            listView2.Columns.Add("HWP", 50, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Temp", 50, HorizontalAlignment.Center);
+            listView2.Columns.Add("Fan", 50, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Pool1", 150, HorizontalAlignment.Center);
+            listView2.Columns.Add("Worker", 50, HorizontalAlignment.Center);
+            listView2.Columns.Add("Pool2", 150, HorizontalAlignment.Center);
+            listView2.Columns.Add("Worker", 50, HorizontalAlignment.Center);
+            listView2.Columns.Add("Pool3", 150, HorizontalAlignment.Center);
+            listView2.Columns.Add("Worker", 50, HorizontalAlignment.Center);
+
+            listView2.ListViewItemSorter = new ListViewColumnSorter();
+            listView2.ColumnClick += new ColumnClickEventHandler(ListViewHelper.ListView_ColumnClick);
+
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -512,7 +560,6 @@ namespace work1
             //检查是否设置了至少一个矿池
             //弹出确认框
             //开始异步批量执行SSH修改操作
-            
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -635,6 +682,33 @@ namespace work1
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void disabled_pools_Buttons()
+        {
+            button11.Enabled = false;
+            button10.Enabled = false;
+            button9.Enabled = false;
+            button8.Enabled = false;
+            button12.Enabled = false;
+            button17.Enabled = false;
+            button16.Enabled = false;
+            button15.Enabled = false;
+            button14.Enabled = false;
+            button13.Enabled = false;
+            button20.Enabled = false;
+            button21.Enabled = false;
+            button22.Enabled = false;
+            button24.Enabled = false;
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
