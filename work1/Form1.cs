@@ -30,6 +30,16 @@ namespace work1
 {
     public partial class Form1 : Form
     {
+        private Color defaultItemColor;
+        private bool next_auto_flag = true;
+        private int checked_num = 0;
+        static private double ghs_crit = 12300;
+        public static int MACHIN_ID = 0;
+        static private bool _overTest = false;
+
+
+
+
         ResourceManager res = new ResourceManager("work1.Form1", Assembly.GetExecutingAssembly());
         List<ipBlock> ipBlockList = new List<ipBlock>();
         List<IPAddress> IPList = new List<IPAddress>();
@@ -66,21 +76,71 @@ namespace work1
         }
         private void ShowList2()
         {
+            //listView2.Clear();
+            //listView2.View = View.Details;
+            //listView2.GridLines = true;
+            //listView2.FullRowSelect = true;
+            //listView2.Columns.Add("IP Address", 150, HorizontalAlignment.Left);
+
+            //foreach (ipBlock block in ipBlockList)
+            //{
+            //    for (int i = block.start; i <= block.end; i++)
+            //    {
+            //        string ip = $"{block.ip_block}.{i}";
+            //        ListViewItem item = new ListViewItem(ip);
+            //        listView2.Items.Add(item);
+            //    }
+            //}
             listView2.Clear();
-            listView2.View = View.Details;
+
             listView2.GridLines = true;
             listView2.FullRowSelect = true;
-            listView2.Columns.Add("IP Address", 150, HorizontalAlignment.Left);
+            listView2.View = View.Details;
+            listView2.Scrollable = true;
+            listView2.MultiSelect = false;
+            listView2.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
-            foreach (ipBlock block in ipBlockList)
+            listView2.Columns.Add("ID", 25, HorizontalAlignment.Center);
+            listView2.Columns.Add("IP", 100, HorizontalAlignment.Center);
+            listView2.Columns.Add("STATUS", 60, HorizontalAlignment.Center);
+            listView2.Columns.Add("Pool1", 150, HorizontalAlignment.Center);
+            listView2.Columns.Add("Worker1", 50, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Pool2", 150, HorizontalAlignment.Center);
+            listView2.Columns.Add("Worker2", 50, HorizontalAlignment.Center);
+
+            listView2.Columns.Add("Pool3", 150, HorizontalAlignment.Center);
+            listView2.Columns.Add("Worker3", 50, HorizontalAlignment.Center);
+
+            // 添加列表项
+            for (int index = 0; index < IPList.Count; index++)
             {
-                for (int i = block.start; i <= block.end; i++)
-                {
-                    string ip = $"{block.ip_block}.{i}";
-                    ListViewItem item = new ListViewItem(ip);
-                    listView2.Items.Add(item);
-                }
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Clear();
+                item.SubItems[0].Text = (index + 1).ToString();
+                item.SubItems.Add(IPList[index].ToString());
+                listView2.Items.Add(item);
             }
+            listView2.MultiSelect = true;
+            listView2.FullRowSelect = true;
+            button4.Enabled = true;
+            enable_buttons();
+        }
+        private void enable_buttons()
+        {
+            button11.Enabled = true;
+            button10.Enabled = true;
+            button9.Enabled = true;
+            button12.Enabled = true;
+            button17.Enabled = true;
+            button16.Enabled = true;
+            button15.Enabled = true;
+            button14.Enabled = true;
+            button13.Enabled = true;
+            button24.Enabled = true;
+            button21.Enabled = true;
+            button22.Enabled = true;
+            button8.Enabled = updatePwdChangeButton();
         }
         private bool CheckIPBlock(string text)
         {
@@ -233,6 +293,54 @@ namespace work1
             listView2.ListViewItemSorter = new ListViewColumnSorter();
             listView2.ColumnClick += new ColumnClickEventHandler(ListViewHelper.ListView_ColumnClick);
 
+            // 添加列表项
+            for (int index = 0; index < IPList.Count; index++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Clear();
+                item.SubItems[0].Text = (index + 1).ToString();
+                item.SubItems.Add(IPList[index].ToString());
+            }
+            listView2.MultiSelect = true;
+            listView2.FullRowSelect = true;
+            if (next_auto_flag)
+            {
+                button11.Enabled = true;
+                button10.Enabled = true;
+                button9.Enabled = true;
+                button4.Enabled = true;
+            }
+        }
+
+
+        private void ShowList3()
+        {
+            listView3.Clear();
+
+            //设置listView的显示属性
+            listView3.GridLines = true;
+            listView3.FullRowSelect = true;
+            listView3.View = View.Details;
+            listView3.Scrollable = true;
+            listView3.MultiSelect = false;
+            listView3.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+
+            // 针对数据库的字段名称，建立与之适应显示表头
+            listView3.Columns.Add("IP", 150, HorizontalAlignment.Center);
+            listView3.Columns.Add("STATUS", 100, HorizontalAlignment.Center);
+
+
+            //添加列表项
+            for (int index = 0; index < IPList.Count; index++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Clear();
+                item.SubItems[0].Text = IPList[index].ToString();
+                listView3.Items.Add(item);
+            }
+            listView3.MultiSelect = true;
+            listView3.FullRowSelect = true;
+            button4.Enabled = true;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -396,7 +504,6 @@ namespace work1
                         string msg1 = string.Format(res.GetString("Error_ImportLines"), errorLines.Count, Environment.NewLine + msg);
                         string msg2 = res.GetString("Error_ImportTitle");
                         MessageBox.Show(msg1 + msg, msg2, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     }
                 }
                 catch(Exception ex)
@@ -419,7 +526,7 @@ namespace work1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            disable_pools_Buttons();
         }
 
         private void Progress_Click(object sender, EventArgs e)
@@ -434,12 +541,12 @@ namespace work1
 
         private void toolStripProgressBar1_Click(object sender, EventArgs e)
         {
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 100;
-            progressBar1.Step = 1;
-            progressBar1.Value = 0;
-            progressBar1.Style = ProgressBarStyle.Continuous;
-            progressBar1.ForeColor = Color.Green;
+            toolStriProgressBar1.Minimum = 0;
+            toolStriProgressBar1.Maximum = 100;
+            toolStriProgressBar1.Step = 1;
+            toolStriProgressBar1.Value = 0;
+            toolStriProgressBar1.Style = ProgressBarStyle.Continuous;
+            toolStriProgressBar1.ForeColor = Color.Green;
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -478,28 +585,61 @@ namespace work1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listView2.Items.Clear();
-            List<ipBlock> selectedBlocks = new List<ipBlock>();
-            foreach(ListViewItem item in listView1.Items)
+            //listView2.Items.Clear();
+            //List<ipBlock> selectedBlocks = new List<ipBlock>();
+            //foreach (ListViewItem item in listView1.Items)
+            //{
+            //    if (item.Checked)
+            //    {
+            //        int index = item.Index;
+            //        if (index >= 0 && index < ipBlockList.Count)
+            //        {
+            //            selectedBlocks.Add(ipBlockList[index]);
+            //        }
+            //    }
+            //}
+
+            //foreach (ipBlock block in selectedBlocks)
+            //{
+            //    for (int i = block.start; i <= block.end; i++)
+            //    {
+            //        string ip = $"{block.ip_block}.{i}";
+            //        listView2.Items.Add(new ListViewItem(ip));
+            //    }
+            //}
+            IPList.Clear();
+            string IPBlock;
+            int StartIP, EndIP;
+            for (int index = 0; index < listView1.Items.Count; index++)
             {
-                if (item.Checked)
+                if (listView1.Items[index].Checked)
                 {
-                    int index = item.Index;
+                    ListViewItem item = listView1.Items[index];
+                    defaultItemColor = item.BackColor;
+
                     if (index >= 0 && index < ipBlockList.Count)
                     {
-                        selectedBlocks.Add(ipBlockList[index]);
+                        IPBlock = ipBlockList[index].ip_block;
+                        StartIP = ipBlockList[index].start;
+                        EndIP = ipBlockList[index].end;
+
+                        for (int i = StartIP; i <= EndIP; i++)
+                        {
+                            IPAddress IP = ParseIPFormate(IPBlock + '.' + i.ToString());
+                            IPList.Add(IP);
+                        }
                     }
                 }
             }
-
-            foreach(ipBlock block in selectedBlocks)
+            if (tabControl1.SelectedTab == tabPage1)
             {
-                for (int i = block.start; i <= block.end; i++)
-                {
-                    string ip = $"{block.ip_block}.{i}";
-                    listView2.Items.Add(new ListViewItem(ip));
-                }
+                ShowList2();
             }
+            if (tabControl1.SelectedTab == tabPage2)
+            {
+                ShowList3();
+            }
+
         }
         public void ExportToExcel(ListView listView)
         {
@@ -513,7 +653,6 @@ namespace work1
                 MessageBox.Show("ok");
             }
         }
-
 
         private StringBuilder ListViewToCSV(ListView p_Listview , string p_ColumnChar,string p_RowChar)
         {
@@ -552,6 +691,10 @@ namespace work1
             ExportToExcel(this.listView2);
         }
 
+        private int howManyModeSelect(bool normal, bool overFreq, bool customize)
+        {
+            return (normal ? 1 : 0) + (customize ? 1 : 0) + (overFreq ? 1 : 0);
+        }
         private void button11_Click(object sender, EventArgs e)
         {
             // 在用户点击“修改矿池”按钮时，先进性输入校验，确认提示，再批量通过SSH修改矿池设置
@@ -560,6 +703,46 @@ namespace work1
             //检查是否设置了至少一个矿池
             //弹出确认框
             //开始异步批量执行SSH修改操作
+            bool pool1_chk = Pool1.Text.Trim() == string.Empty || Worker1.Text.Trim() == string.Empty || Pwd1.Text.Trim() == string.Empty;
+            bool pool2_chk = Pool1.Text.Trim() == string.Empty || Worker2.Text.Trim() == string.Empty || Pwd2.Text.Trim() == string.Empty;
+            bool pool3_chk = Pool1.Text.Trim() == string.Empty || Worker3.Text.Trim() == string.Empty || Pwd3.Text.Trim() == string.Empty;
+
+            if (howManyModeSelect(checkBox_normal_mode.Checked, checkBox_overfreq_mode.Checked, checkBox_customize_mode.Checked) == 0)
+            {
+                MessageBox.Show("please select at least one mode!");
+                return;
+            }
+
+            if (howManyModeSelect(checkBox_normal_mode.Checked, checkBox_overfreq_mode.Checked, checkBox_customize_mode.Checked) > 1)
+            {
+                MessageBox.Show("only one mode could be select!");
+                return;
+            }
+
+            if (pool1_chk && pool2_chk && pool3_chk)
+            {
+                MessageBox.Show("Set at least one pool1!");
+                return;
+            }
+            if (pool1ck.Checked)
+                checked_num++;
+            if (pool2ck.Checked)
+                checked_num++;
+            if (pool3ck.Checked)
+                checked_num++;
+            DialogResult dr = MessageBox.Show("Are you sure to change pools?", "Change Pools", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                disable_pools_Buttons();
+
+                toolStriProgressBar1.Maximum = listView2.Items.Count;
+                toolStriProgressBar1.Value = 0;
+
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -568,9 +751,27 @@ namespace work1
             ip_config_form = new ipConfigForm();
             ip_config_form.Owner = this;
             ip_config_form.ShowDialog();
-
         }
-
+        static public double Get_ghs_crit(bool _overFreq)
+        {
+            if (MACHIN_ID == 0)
+            {
+                return _overFreq ? 16500 : 15700;
+            }
+            else if (MACHIN_ID == 1)
+            {
+                return _overFreq ? 18900 : 18000;
+            }
+            else if (MACHIN_ID == 2)
+            {
+                return 2135;
+            }
+            else if (MACHIN_ID == 3)
+            {
+                return _overFreq ? 7800 : 13580;
+            }
+            return 17000;
+        }
         private void button10_Click(object sender, EventArgs e)
         {
             // 批量检查矿机状态
@@ -581,6 +782,21 @@ namespace work1
             //设置进度条
             //异步对所有矿机执行检查任务
             //每台矿机完成后调回函数更新界面，计数，进度条
+            ShowList2_state();
+            disable_pools_Buttons();
+
+            if (checkBox_4level.Checked)
+            {
+                ghs_crit = Get_ghs_crit(true);
+                _overTest = true;
+            }
+            else
+            {
+                ghs_crit = Get_ghs_crit(false);
+                _overTest = false;
+            }
+            toolStriProgressBar1.Maximum = listView2.Items.Count;
+            toolStriProgressBar1.Value = 0;
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -688,7 +904,7 @@ namespace work1
         {
 
         }
-        private void disabled_pools_Buttons()
+        private void disable_pools_Buttons()
         {
             button11.Enabled = false;
             button10.Enabled = false;
@@ -706,9 +922,23 @@ namespace work1
             button24.Enabled = false;
         }
 
+        private bool updatePwdChangeButton()
+        {
+            if (textBox2.Text.Trim() !=string.Empty && textBox3.Text.Trim() !=string.Empty && textBox4.Text.Trim() != string.Empty)
+            {
+                if (textBox3.Text.Trim().Equals(textBox4.Text.Trim()))
+                    return true;
+                else
+                    return false;
+            }
+            else
+            {
+                return false;
+            }    
+        }
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
